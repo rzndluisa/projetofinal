@@ -3,8 +3,10 @@ const ingredientForm = document.getElementById('ingredient-form');
 const ingredientInput = document.getElementById('ingredient-input');
 const ingredientList = document.getElementById('ingredient-list2');
 const recipeList = document.getElementById('recipe-list')
+const fetchRecipesButton = document.getElementById('fetch-recipes-btn')
 
-let ingredients = ["macarrão", "queijo", "frango"];
+let ingredients = [];
+let selectedIngredients = [];
 
 /*function renderIngredients () {
    ingredientList.innerHTML = '';
@@ -60,5 +62,29 @@ function fetchRecipes () {
         </div>`;
     }, 1000);
 }
+ // Selecionar os checkboxes 
+ const checkboxes = document.querySelectorAll ('#ingredient-list input[type= "checkbox"]');
+
+ //Limpar o array de ingredientes selecionados 
+ selectedIngredients = [];
+
+ //Verifica quais checkboxes estão selecionados e armazena os ingredientes
+ checkboxes.forEach((checkbox, index) =>{
+    if(checkbox.checked) {
+        selectedIngredients.push(checkbox.parentElement.textContent.trim());
+    }
+ });
+ 
+ if (selectedIngredients.length > 0) {
+    recipeList.innerHTML = `<div><h3>Receitas com: ${selectedIngredients.join(',')}</h3></div>`;
+ } else {
+    recipeList.innerHTML = '<p> Nenhuma receita encontrada. Selecione ingredientes para buscar. </p>';
+ }
+ console.log (`Ingredientes selecionados: ${selectedIngredients.join(',')}`);
+
+ // Adicionar o evento de clique no botão de buscar receitas
+ fetchRecipesButton.addEventListener('click', fetchRecipes);
+ 
+ renderIngredients();
 
 ingredientForm.addEventListener('submit', fetchRecipes);
