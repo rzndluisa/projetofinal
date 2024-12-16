@@ -1,12 +1,23 @@
+console.log ("O JavaScript está funcionando!");
 const ingredientForm = document.getElementById('ingredient-form');
 const ingredientInput = document.getElementById('ingredient-input');
-const ingredientList = document.getElementById('ingredient-list');
+const ingredientList = document.getElementById('ingredient-list2');
 const recipeList = document.getElementById('recipe-list')
 
-let ingredients = []
+let ingredients = ["macarrão", "queijo", "frango"];
+
+/*function renderIngredients () {
+   ingredientList.innerHTML = '';
+    ingredients.forEach((ingredient, index) => {
+        const li = document.createElement ('li');
+        li.textContent = ingredient;
+        li.innerHTML += ` <button onclick= "removeIngredient(${index})">Remover</button>`
+        ingredientList.appendChild(li);
+    });
+}*/
 
 function renderIngredients () {
-    ingredientList.innerHTML = '';
+   ingredientList.innerHTML = '';
     ingredients.forEach((ingredient, index) => {
         const li = document.createElement ('li');
         li.textContent = ingredient;
@@ -15,17 +26,18 @@ function renderIngredients () {
     });
 }
 
-ingredientForm.addEventListener("click", async () => {
-    const ingredientForm = ingredientInput(input.value)
-    resultado.textContent = "vai dar certo!"
-    input.value = ""
-});
 
 // Função para adicionar ingrediente
 ingredientForm.addEventListener('submit',(e) => {
     e.preventDefault();
+    console.log("Formulário enviado!");
+
     const ingredient = ingredientInput.value.trim();
+    console.log(`Ingrediente digitado: ${ingredient}`)
+
     if (ingredient && !ingredients.includes(ingredient)){
+        console.log("Ingrediente válido e ainda não está na lista.")
+        
         ingredients.push(ingredient);
         renderIngredients();
         ingredientInput.value = '';
