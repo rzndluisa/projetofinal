@@ -10,7 +10,7 @@ function renderIngredients () {
     ingredients.forEach((ingredient, index) => {
         const li = document.createElement ('li');
         li.textContent = ingredient;
-        li.innerHTML += ` <button onclick= "removeIngredient(${index})">Remover</button>`
+        li.innerHTML += `<button onclick= "removeIngredient(${index})">Remover</button>`
         ingredientList.appendChild(li);
     });
 }
