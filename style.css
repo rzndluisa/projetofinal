@@ -1,11 +1,81 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family:'Irish Grover', sans-serif ;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color:antiquewhite;
+    background-color:  #FDFBF6;
     text-align:center
 }
-ul{
+
+  header {
+    background-color:  #5A189A;
+    color: #FFD700; 
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  main {
+    padding: 1rem;
+  }
+  
+  section {
+    margin-bottom: 2rem;
+  }
+  
+  h2 {
+    color: #9D4EDD;
+  }
+  
+  form {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+  
+  input, button {
+    padding: 0.5rem;
+    border: 1 px solid  #9D4EDD;
+    border-radius: 5px;
+  }
+  
+  input{ 
+    background-color:#F8F7FF ;
+  }
+  
+  button {
+    background-color:  #FFD700;
+    color: #5A189A;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  button:hover {
+    background-color: #FDCB58;
+    color: #3C096C;
+  }
+  
+  ul {
     list-style: none;
-}
+    padding: 0;
+  }
+  
+  li {
+    background-color: #FDFBF6;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    /*border: 1px solid #ddd;*/
+    border: 1px solid #E0AAFF; /* Roxo claro */
+    border-radius: 5px;
+    color:#3C096C;
+  }
+  
+  #recipe-list {
+    background-color: #F8F7FF; 
+    padding: 1rem;
+    border-radius: 5px;
+    border: 1px solid #9D4EDD;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0,1);
+
+  }
+  
