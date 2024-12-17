@@ -34,15 +34,17 @@ function renderIngredients() {
 
         ingredientList.appendChild(li);
 
-        const checkbox = document.createElement('btn');
+        const checkbox = document.createElement('input');
         checkbox.type = 'checkbox';
         checkbox.checked = true;
 
         li.appendChild(checkbox);
         li.innerHTML += ` <button onclick= "removeIngredient(${index})">Remover</button>`
         
-        li2.innerHTML += `${li.textContent}<input type="checkbox" name="${ingredient}" id="${ingredient}">`;
-        ingredientListBaixo.appendChild(li2);
+        li2.innerHTML += `${ingredient}<input type="checkbox" name="${ingredient}" id="${ingredient}">`;
+
+        /*li2.innerHTML += `${li.textContent}<input type="checkbox" name="${ingredient}" id="${ingredient}">`;
+        ingredientListBaixo.appendChild(li2);*/
         //ingredientListBaixo.appendChild(li);
     });
 }
