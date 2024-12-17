@@ -24,6 +24,14 @@ function renderIngredients() {
         const li = document.createElement('li');
         const li2 = document.createElement('li');
         li.textContent = ingredient;
+
+        const removeButton = document.createElement('button');
+        removeButton.textContent = 'Remover';
+        removeButton.onclick = function(){
+            removeIngredient(index);
+        }
+        li.appendChild(removeButton);
+
         const checkbox = document.createElement('btn');
         checkbox.type = 'checkbox';
         checkbox.checked = true;
@@ -31,7 +39,7 @@ function renderIngredients() {
         li.appendChild(checkbox);
         li.innerHTML += ` <button onclick= "removeIngredient(${index})">Remover</button>`
         ingredientList.appendChild(li);
-        li2.innerHTML+= `${li.textContent}<input type="checkbox" name="" id="macarrao">`
+        li2.innerHTML += `${li.textContent}<input type="checkbox" name="${ingredient}" id="${ingredient}">`;
         ingredientListBaixo.appendChild(li2);
         //ingredientListBaixo.appendChild(li);
     });
@@ -63,7 +71,7 @@ function getSelectedIngredients() {
     checkboxes.forEach((checkbox) => {
         if (checkbox.checked) {
             selectedIngredients.push(checkbox.parentElement.textContent.trim());
-        }                       
+        }
     });
     console.log(`Ingredientes selecionados: ${selectedIngredients.join(', ')}`);
 }
