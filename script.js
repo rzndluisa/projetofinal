@@ -2,6 +2,7 @@ console.log("O JavaScript está funcionando!");
 const ingredientForm = document.getElementById('ingredient-form');
 const ingredientInput = document.getElementById('ingredient-input');
 const ingredientList = document.getElementById('ingredient-list2');
+const ingredientListBaixo = document.getElementById('ingredient-list');
 const recipeList = document.getElementById('recipe-list')
 const fetchRecipesButton = document.getElementById('fetch-recipes-btn')
 
@@ -21,11 +22,21 @@ function renderIngredients() {
     ingredientList.innerHTML = '';
     ingredients.forEach((ingredient, index) => {
         const li = document.createElement('li');
+        const li2 = document.createElement('li');
         li.textContent = ingredient;
+        const checkbox = document.createElement('btn');
+        checkbox.type = 'checkbox';
+        checkbox.checked = true;
+
+        li.appendChild(checkbox);
         li.innerHTML += ` <button onclick= "removeIngredient(${index})">Remover</button>`
         ingredientList.appendChild(li);
+        li2.innerHTML+= `${li.textContent}<input type="checkbox" name="" id="macarrao">`
+        ingredientListBaixo.appendChild(li2);
+        //ingredientListBaixo.appendChild(li);
     });
 }
+
 
 
 // Função para adicionar ingrediente
