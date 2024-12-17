@@ -7,6 +7,7 @@ const fetchRecipesButton = document.getElementById('fetch-recipes-btn')
 
 let ingredients = [];
 let selectedIngredients = [];
+let recipes = []
 
 /*function renderIngredients () {
    ingredientList.innerHTML = '';
