@@ -20,9 +20,13 @@ let selectedIngredients = [];
 // Função para renderizar a lista de ingredientes
 function renderIngredients() {
     ingredientList.innerHTML = '';
+    //ingredientListBaixo.innerHTML = '';
+
+    
+
     ingredients.forEach((ingredient, index) => {
         const li = document.createElement('li');
-        const li2 = document.createElement('li');
+       
         li.textContent = ingredient;
 
         const removeButton = document.createElement('div');
@@ -34,18 +38,26 @@ function renderIngredients() {
 
         ingredientList.appendChild(li);
 
+        const li2 = document.createElement('li');
+        li2.textContent = ingredient;
+
         const checkbox = document.createElement('input');
         checkbox.type = 'checkbox';
+        checkbox.name = ingredient;
+        checkbox.id = ingredient;
         checkbox.checked = true;
 
-        li.appendChild(checkbox);
+       
+        li2.appendChild(checkbox);
+        //li.appendChild(checkbox);
+        ingredientListBaixo.appendChild(li2);
         li.innerHTML += ` <button onclick= "removeIngredient(${index})">Remover</button>`
         
-        li2.innerHTML += `${ingredient}<input type="checkbox" name="${ingredient}" id="${ingredient}">`;
+       //li2.innerHTML += `${ingredient}<input type="checkbox" name="${ingredient}" id="${ingredient}">`;
 
         /*li2.innerHTML += `${li.textContent}<input type="checkbox" name="${ingredient}" id="${ingredient}">`;
         ingredientListBaixo.appendChild(li2);*/
-        //ingredientListBaixo.appendChild(li);
+        ingredientListBaixo.appendChild(li);
     });
 }
 

@@ -12,6 +12,7 @@ body {
     color: #FFD700; 
     text-align: center;
     padding: 1rem;
+    margin-bottom: 10px;
   }
   
   main {
@@ -81,8 +82,9 @@ body {
   }
   
   #ingredient-list2 li {
+   
     display: flex; /* Coloca o texto e o botão na mesma linha */
     align-items: center; /* Centraliza verticalmente os itens */
-    /*justify-content: space-between; /* Espaça o texto e o botão */
+    justify-content: center; /* Espaça o texto e o botão */
     gap: 5px; /* Adiciona espaço entre o texto e o botão */
   }
