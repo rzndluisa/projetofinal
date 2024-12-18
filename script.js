@@ -25,8 +25,8 @@ function renderIngredients() {
         const li2 = document.createElement('li');
         li.textContent = ingredient;
 
-        const removeButton = document.createElement('button');
-        removeButton.textContent = 'Remover';
+        const removeButton = document.createElement('div');
+        removeButton.textContent = '';
         removeButton.onclick = function(){
             removeIngredient(index);
         }

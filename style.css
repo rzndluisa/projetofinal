@@ -70,6 +70,7 @@ body {
     color:#3C096C;
   }
   
+  
   #recipe-list {
     background-color: #F8F7FF; 
     padding: 1rem;
@@ -79,3 +80,9 @@ body {
 
   }
   
+  #ingredient-list2 li {
+    display: flex; /* Coloca o texto e o botão na mesma linha */
+    align-items: center; /* Centraliza verticalmente os itens */
+    /*justify-content: space-between; /* Espaça o texto e o botão */
+    gap: 5px; /* Adiciona espaço entre o texto e o botão */
+  }
